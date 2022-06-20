@@ -24,17 +24,15 @@ function Table(props) {
     const filterData = data?.data?.filter((filterData) => {
       return (
         filterData?.id == SearchInput ||
-        filterData?.name == SearchInput || 
+        filterData?.name == SearchInput ||
         filterData?.year == SearchInput ||
         filterData?.color == SearchInput ||
-        filterData?.pantone_value == SearchInput
+        filterData?.pantone_value == SearchInput 
       );
-   
     });
 
     setserchData(filterData);
   }, [SearchInput]);
-
 
   console.log(serchData);
 
@@ -50,12 +48,13 @@ function Table(props) {
                 className="form-control"
                 placeholder="Search..."
                 onChange={(e) => setSearchInput(e.target.value)}
+               
               />
-
               <span className="bx bx-search-alt " />
             </div>
           </form>
-          <table class="table fs-4  table-bordered table-hover">
+          <table class="table fs-4  table-bordered table-hover"
+          >
             <thead>
               <tr className="text-center table-dark">
                 <th scope="col">id</th>
@@ -75,11 +74,11 @@ function Table(props) {
                   <td>{ApiData.pantone_value}</td>
                 </tr>
               );
-
             })}
           </table>
         </div>
       </div>
+         
     </div>
   );
 }
